@@ -1,6 +1,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
 <style>
+  :root {
+	--penguin-size: 1000px;
+    --penguin-skin: gray;
+    --penguin-belly: pink;
+    --penguin-beak: orange;
+  }
+  @media (max-width: 350px) {
+    :root {
+      --penguin-size: 200px;
+      --penguin-skin: black;
+    }
+  }
+  
   .penguin {
 
   
@@ -36,15 +49,35 @@
   }
 
   .right-hand {
-    top: 0%;
-    left: -5%;
-    background: var(--penguin-skin, gray);
+    top: 5%;
+    left: 25%;
+    background: var(--penguin-skin, black);
     width: 30%;
     height: 60%;
     border-radius: 30% 30% 120% 30%;
-    transform: rotate(45deg);
+    transform: rotate(130deg);
     z-index: -1;
+    animation-duration: 3s;
+    animation-name: wave;
+    animation-iteration-count: infinite;
+    transform-origin:0% 0%;
+    animation-timing-function: linear;
   }
+
+ @keyframes wave {
+      10% {
+        transform: rotate(110deg);
+      }
+      20% {
+        transform: rotate(130deg);
+      }
+      30% {
+        transform: rotate(110deg);
+      }
+      40% {
+        transform: rotate(130deg);
+      }
+    }
 
   .left-hand {
     top: 0%;
